@@ -9,7 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class NotificationRequest {
     private Recipient recipient;
-    private String notificationPreference; //Email, SMS or Push
+    private NotificationPreference notificationPreference; //Email, SMS or Push
     private NotificationType notificationType;
-    private int notificationPriority;
+    private Content content;
 }

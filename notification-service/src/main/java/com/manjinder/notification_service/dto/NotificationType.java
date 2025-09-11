@@ -1,11 +1,15 @@
 package com.manjinder.notification_service.dto;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class NotificationType {
-    /*
-        Type 1 : Immediate Notifications
-        Type 2 : Correspondence Notifications
-     */
-    private String notificationType;
+    private NotificationCategory notificationCategory;
     private int notificationPriority;
     /*
         Template 1 : Transactional Notifications

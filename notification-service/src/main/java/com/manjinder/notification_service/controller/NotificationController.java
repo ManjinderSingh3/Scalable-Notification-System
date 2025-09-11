@@ -3,9 +3,8 @@ package com.manjinder.notification_service.controller;
 import org.apache.kafka.common.errors.InvalidRequestException;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.ResponseEntity;
-import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
-import com.manjinder.notification_service.model.NotificationRequest;
+import com.manjinder.notification_service.dto.NotificationRequest;
 
 @RestController
 //@RequestMapping("/api")

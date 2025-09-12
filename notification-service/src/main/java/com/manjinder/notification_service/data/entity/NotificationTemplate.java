@@ -18,6 +18,15 @@ public class NotificationTemplate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    private int templateNumber;
+
+    /*
+    Transactional, Informational, Promotional
+     */
+    private String templateName;
+
+    @Column(name="priority")
+    private int priority;
 
     @Column(name="created_at", updatable = false)
     private LocalDateTime createdAt = LocalDateTime.now();

@@ -4,19 +4,25 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.apache.kafka.clients.admin.NewTopic;
 import org.springframework.kafka.config.TopicBuilder;
-import org.springframework.kafka.core.KafkaAdmin;
 import static com.manjinder.notification_service.constants.Constants.*;
 
 @Configuration
 public class KafkaConfig {
 
     @Bean
-    public KafkaAdmin.NewTopics createTopics(){
+    public NewTopic emailTopic(){
         // Design Pattern used : Builder pattern to build Kafka topic
-        NewTopic priorityOneTopic = TopicBuilder.name(PRIORITY_ONE_TOPIC).build();
-        NewTopic priorityTwoTopic = TopicBuilder.name(PRIORITY_TWO_TOPIC).build();
-        NewTopic priorityThreeTopic = TopicBuilder.name(PRIORITY_THREE_TOPIC).build();
+        return TopicBuilder.name(NOTIFICATIONS_DELIVERY_TOPIC1).build();
+    }
 
-        return new KafkaAdmin.NewTopics(priorityOneTopic);
+    @Bean
+    public NewTopic smsTopic(){
+        // Design Pattern used : Builder pattern to build Kafka topic
+        return TopicBuilder.name(NOTIFICATIONS_DELIVERY_TOPIC2).build();
+    }
+
+    @Bean
+    public NewTopic pushNotificationsTopic(){
+        return TopicBuilder.name(NOTIFICATIONS_DELIVERY_TOPIC3).build();
     }
 }
